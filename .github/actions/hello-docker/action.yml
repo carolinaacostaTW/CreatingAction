@@ -1,0 +1,16 @@
+name: Notifications to Google Chat
+author: Carolina
+description: Notifications to Google Chat when pipeline is broken and when pipeline is fixed.
+inputs:
+    who-to-greet:
+      description: "Who to greet"
+      required: true
+      default: Caro
+outputs:
+  time:
+    description: "The greeting time"
+runs:
+  using: "docker" 
+  main: "Dockerfile"
+  args:
+    - ${{ inputs.who-to-greet}}
